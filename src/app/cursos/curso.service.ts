@@ -18,11 +18,13 @@ export class CursoService {
     ];
   }
 
-  getCurso(id: number){
-    let cursos = this.getCursos();
+  getCurso(id: number) {
+    const cursos = this.getCursos();
 
-    for (let i = 0; i < cursos.length; i++){
-      if (cursos[i].id == id) return cursos[i];
+    for (let i = 0; i < cursos.length; i++) {
+      if (cursos[i].id === id) {
+        return cursos[i];
+      }
     }
 
     return null;

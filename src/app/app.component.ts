@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { setTheme } from 'ngx-bootstrap/utils';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,6 @@ import { setTheme } from 'ngx-bootstrap/utils';
 })
 export class AppComponent {
   title = 'angular-simple-login';
-  constructor(){
-    setTheme('bs3');
+  constructor () {
   }
 }

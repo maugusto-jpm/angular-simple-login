@@ -1,8 +1,0 @@
-<h4>Cursos disponíveis</h4>
-
-<div class="list-group">
-  <ng-container *ngFor="let curso of cursos">
-    <!-- [routerLink]="['curso', curso.id]" -->
-    <a [routerLink]="['/curso', curso.id]" class="list-group-item">{{ curso.nome }}</a>
-  </ng-container>
-</div>

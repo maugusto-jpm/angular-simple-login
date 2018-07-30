@@ -1,0 +1,6 @@
+<div class="list-group">
+  <ng-container *ngFor="let aluno of alunos">
+    <a [routerLink]="aluno.id" class="list-group-item">{{ aluno.nome }}</a>
+  </ng-container>
+</div>
+<button routerLink="novo" class="btn btn-success">Adicionar novo aluno</button>

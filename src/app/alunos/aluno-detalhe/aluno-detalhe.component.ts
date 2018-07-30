@@ -1,31 +1,31 @@
-import { CursoService } from '../curso.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AlunoService } from '../aluno.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-curso-detalhe',
-  templateUrl: './curso-detalhe.component.html',
-  styleUrls: ['./curso-detalhe.component.css']
+  selector: 'app-aluno-detalhe',
+  templateUrl: './aluno-detalhe.component.html',
+  styleUrls: ['./aluno-detalhe.component.css']
 })
-export class CursoDetalheComponent implements OnInit, OnDestroy {
-  curso: any;
+export class AlunoDetalheComponent implements OnInit, OnDestroy {
+  aluno: any;
   subscId: Subscription;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private servico: CursoService
+    private servico: AlunoService
   ) { }
 
   ngOnInit() {
     this.subscId = this.route.params.subscribe(
       (params) => {
         const id = params['id'];
-        this.curso = this.servico.getCurso(id);
+        this.aluno = this.servico.getCurso(id);
 
-        if (this.curso == null) {
-          this.router.navigate(['../curso-nao-encontrado']);
+        if (this.aluno == null) {
+          this.router.navigate(['../aluno-nao-encontrado']);
         }
       }
     );
