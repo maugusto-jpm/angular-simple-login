@@ -8,14 +8,19 @@ import { AlunosComponent } from './alunos-component/alunos.component';
 
 
 export const AlunosRouting: ModuleWithProviders = RouterModule.forChild([
-  { path: 'alunos', component: AlunosComponent },
-  { path: 'alunos/novo', component: CriarEditarComponent },
-  { path: 'alunos/aluno-nao-encontrado', component: NaoEncontradoComponent },
   {
-    path: 'alunos/:id',
+    path: 'alunos',
+    component: AlunosComponent,
     children: [
-      { path: '', component: AlunoDetalheComponent },
-      { path: 'editar', component: CriarEditarComponent }
+      { path: 'novo', component: CriarEditarComponent },
+      { path: 'aluno-nao-encontrado', component: NaoEncontradoComponent },
+      {
+        path: ':id',
+        children: [
+          { path: '', component: AlunoDetalheComponent },
+          { path: 'editar', component: CriarEditarComponent }
+        ]
+      }
     ]
   }
 ]);

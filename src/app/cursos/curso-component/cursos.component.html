@@ -1,7 +1,11 @@
 <h4>Cursos disponíveis</h4>
 
-<div class="list-group">
+<div class="list-group col-md-6">
   <ng-container *ngFor="let curso of cursos">
-    <a [routerLink]="curso.id" class="list-group-item">{{ curso.nome }}</a>
+    <a [routerLink]="curso.id" routerLinkActive="active" class="list-group-item" >{{ curso.nome }}</a>
   </ng-container>
+</div>
+
+<div class="col-md-6">
+  <router-outlet></router-outlet>
 </div>

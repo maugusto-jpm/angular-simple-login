@@ -2,10 +2,10 @@ import { CursoService } from './curso.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CursosComponent } from './curso-component/cursos.component';
-import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 import { CursosRouting } from './curso.routing';
+import { CursosComponent } from './curso-component/cursos.component';
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
+import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 
 @NgModule({
   imports: [
@@ -19,7 +19,6 @@ import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.componen
   ],
   providers: [
     CursoService
-  ],
-  exports: [CursosComponent]
+  ]
 })
 export class CursosModule { }

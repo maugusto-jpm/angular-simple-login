@@ -5,16 +5,17 @@ import { Injectable } from '@angular/core';
 })
 export class AlunoService {
 
-  constructor() { }
+  constructor() {
+  }
 
   getAlunos(): any[] {
     return [
-      {id: '1', nome: 'Ana Lúcia'},
-      {id: '2', nome: 'Laís'},
-      {id: '3', nome: 'Cláudio'},
-      {id: '4', nome: 'Ricardo'},
-      {id: '5', nome: 'Gustavo'},
-      {id: '6', nome: 'Alessandra'}
+      {id: '1', nome: 'Ana Lúcia', email: 'ana.lucia@email.com.br'},
+      {id: '2', nome: 'Laís', email: 'lais-lac@email.com.br'},
+      {id: '3', nome: 'Cláudio', email: 'claudio-ne@email.com.br'},
+      {id: '4', nome: 'Ricardo', email: 'ric-25@email.com.br'},
+      {id: '5', nome: 'Gustavo', email: 'gustavo-gus@email.com.br'},
+      {id: '6', nome: 'Alessandra', email: 'ale.sandra@email.com.br'}
     ];
   }
 

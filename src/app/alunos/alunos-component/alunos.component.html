@@ -1,6 +1,12 @@
-<div class="list-group">
+<h4>Alunos cadastrados</h4>
+
+<div class="list-group col-md-6">
   <ng-container *ngFor="let aluno of alunos">
-    <a [routerLink]="aluno.id" class="list-group-item">{{ aluno.nome }}</a>
+    <a [routerLink]="aluno.id" routerLinkActive="active"  class="list-group-item">{{ aluno.nome }}</a>
   </ng-container>
+  <button routerLink="novo" class="btn btn-success">Adicionar novo aluno</button>
 </div>
-<button routerLink="novo" class="btn btn-success">Adicionar novo aluno</button>
+
+<div class="col-md-6">
+  <router-outlet></router-outlet>
+</div>

@@ -25,7 +25,12 @@ export class AlunoDetalheComponent implements OnInit, OnDestroy {
         this.aluno = this.servico.getCurso(id);
 
         if (this.aluno == null) {
-          this.router.navigate(['../aluno-nao-encontrado']);
+          console.log('Redirecionando...');
+          console.log(this.router.url);
+          this.router.navigate(
+            ['../../aluno-nao-encontrado'],
+            {relativeTo: this.route}
+          );
         }
       }
     );
