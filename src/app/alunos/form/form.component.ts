@@ -1,14 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlunoService } from '../aluno.service';
 import { Subscription } from 'rxjs';
 
+import { AlunoService } from '../aluno.service';
+
 @Component({
-  selector: 'app-aluno-detalhe',
-  templateUrl: './aluno-detalhe.component.html',
-  styleUrls: ['./aluno-detalhe.component.css']
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.css']
 })
-export class AlunoDetalheComponent implements OnInit, OnDestroy {
+export class FormComponent implements OnInit, OnDestroy {
   aluno: any;
   subscId: Subscription;
 
@@ -25,10 +26,7 @@ export class AlunoDetalheComponent implements OnInit, OnDestroy {
         this.aluno = this.servico.getCurso(id);
 
         if (this.aluno == null) {
-          this.router.navigate(
-            ['../aluno-nao-encontrado'],
-            {relativeTo: this.route}
-          );
+          this.aluno = {};
         }
       }
     );

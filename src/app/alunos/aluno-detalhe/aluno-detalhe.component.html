@@ -1,6 +1,11 @@
 <p>
     Aluno: {{ aluno?.nome }}
-  </p>
-  <p>
-      Id: {{ aluno?.id }}
-  </p>
+</p>
+<p>
+    Id: {{ aluno?.id }}
+</p>
+<p>
+  E-mail: {{ aluno?.email }}
+</p>
+
+<button [routerLink]="'editar'" class="btn btn-primary">Editar aluno</button>

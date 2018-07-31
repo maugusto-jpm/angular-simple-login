@@ -7,7 +7,7 @@ import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 
 export const CursosRouting: ModuleWithProviders = RouterModule.forChild([
   {
-    path: 'cursos',
+    path: '',
     component: CursosComponent,
     children: [
       { path: 'curso-nao-encontrado', component: NaoEncontradoComponent },

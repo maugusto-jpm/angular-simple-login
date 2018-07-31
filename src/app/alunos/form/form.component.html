@@ -1,0 +1,19 @@
+<fieldset class="form-horizontal">
+
+  <legend>{{ aluno.id ? 'Editar dados do aluno' : 'Dados do novo aluno' }}</legend>
+
+  <div class="form-group">
+    <label>Nome:</label>
+    <input [(ngModel)]="aluno.nome" name="nome" type="text" placeholder="Nome do aluno" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>E-mail:</label>
+    <input [(ngModel)]="aluno.email" name="email" type="email" placeholder="Email do aluno" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary">{{ aluno.id ? 'Salvar alterações' : 'Cadastrar' }}</button>
+  </div>
+
+</fieldset>

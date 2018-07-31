@@ -3,24 +3,18 @@ import { ModuleWithProviders } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
-import { CriarEditarComponent } from './criar-editar/criar-editar.component';
 import { AlunosComponent } from './alunos-component/alunos.component';
-
+import { FormComponent } from './form/form.component';
 
 export const AlunosRouting: ModuleWithProviders = RouterModule.forChild([
   {
-    path: 'alunos',
+    path: '',
     component: AlunosComponent,
     children: [
-      { path: 'novo', component: CriarEditarComponent },
+      { path: 'novo', component: FormComponent },
       { path: 'aluno-nao-encontrado', component: NaoEncontradoComponent },
-      {
-        path: ':id',
-        children: [
-          { path: '', component: AlunoDetalheComponent },
-          { path: 'editar', component: CriarEditarComponent }
-        ]
-      }
+      { path: ':id', component: AlunoDetalheComponent },
+      { path: ':id/editar', component: FormComponent }
     ]
   }
 ]);
