@@ -1,38 +1,38 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { AlunoService } from '../aluno.service';
+import { Formulario } from '../../models';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit, OnDestroy {
+export class FormComponent implements OnInit, Formulario {
   aluno: any;
-  subscId: Subscription;
+  mudou = false;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private servico: AlunoService
   ) { }
 
   ngOnInit() {
-    this.subscId = this.route.params.subscribe(
-      (params) => {
-        const id = params['id'];
-        this.aluno = this.servico.getCurso(id);
+    const id = this.route.snapshot.params['id'];
+    this.aluno = this.servico.getCurso(id);
 
-        if (this.aluno == null) {
-          this.aluno = {};
-        }
-      }
-    );
+    if (this.aluno == null) {
+      this.aluno = {};
+    }
   }
 
-  ngOnDestroy() {
-    this.subscId.unsubscribe();
+  podeSair(): boolean {
+    if (!this.mudou) {
+      return true;
+    }
+
+    return confirm('Deseja realmente sair e descartar as alterações?');
   }
 }

@@ -1,3 +1,5 @@
+import { LoadAlunoResolver } from './guards/load-aluno.resolver';
+import { ExitGuard } from './guards/exit.guard';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -8,6 +10,7 @@ import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.componen
 import { AlunoService } from './aluno.service';
 import { AlunoDetalheComponent } from './aluno-detalhe/aluno-detalhe.component';
 import { FormComponent } from './form/form.component';
+import { AdminGuard } from './guards/admin.guard';
 
 @NgModule({
   imports: [
@@ -22,7 +25,10 @@ import { FormComponent } from './form/form.component';
     FormComponent
   ],
   providers: [
-    AlunoService
+    AlunoService,
+    AdminGuard,
+    ExitGuard,
+    LoadAlunoResolver
   ]
 })
 export class AlunosModule { }

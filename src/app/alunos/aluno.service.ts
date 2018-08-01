@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Aluno } from '../models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlunoService {
 
-  constructor() {
-  }
-
-  getAlunos(): any[] {
+  getAlunos(): Aluno[] {
     return [
       {id: '1', nome: 'Ana Lúcia', email: 'ana.lucia@email.com.br'},
       {id: '2', nome: 'Laís', email: 'lais-lac@email.com.br'},
@@ -19,7 +17,7 @@ export class AlunoService {
     ];
   }
 
-  getCurso(id: number) {
+  getCurso(id: string) {
     const alunos = this.getAlunos();
 
     for (let i = 0; i < alunos.length; i++) {

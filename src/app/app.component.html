@@ -3,11 +3,13 @@
     <div class="navbar-header" routerLinkActive="active">
       <a class="navbar-brand" routerLink="">Login básico no Angular 5</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li routerLinkActive="active"><a routerLink="login">Login</a></li>
-      <li routerLinkActive="active"><a routerLink="cursos">Cursos</a></li>
-      <li routerLinkActive="active"><a routerLink="alunos">Alunos</a></li>
-    </ul>
+    <ng-container *ngIf="logado">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a routerLink="login">Login</a></li>
+        <li routerLinkActive="active"><a routerLink="cursos">Cursos</a></li>
+        <li routerLinkActive="active"><a routerLink="alunos">Alunos</a></li>
+      </ul>
+    </ng-container>
   </div>
 </nav>
 
